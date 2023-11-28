@@ -1,0 +1,81 @@
+#include "pch.h"
+#include "CppUnitTest.h"
+#include "D:\code\lb3\lb3\lab3.cpp"
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+namespace UnitTest1
+{
+    TEST_CLASS(calculate_tests)
+    {
+    public:
+        TEST_METHOD(check_RightInput1) {
+            double a = 3;
+            double b = 11;
+            double h = 1;
+            int n = 7;
+
+            try
+            {
+                checkValidInput();
+                checkValidParams(a, b, h, n );
+                Assert::IsTrue(true);
+            }
+            catch (const std::exception&)
+            {
+                Assert::Fail();
+            }
+        }
+        TEST_METHOD(check_RightInput2) {
+            double a = -3;
+            double b = 7;
+            double h = 6;
+            int n = 26;
+
+            try
+            {
+                checkValidInput();
+                checkValidParams(a, b, h, n);
+                Assert::IsTrue(true);
+            }
+            catch (const std::exception&)
+            {
+                Assert::Fail();
+            }
+        }
+        TEST_METHOD(check_WrongInput1) {
+            double a = 3;
+            double b = 2;
+            double h = 1;
+            int n = 7;
+
+            try
+            {
+                checkValidInput();
+                checkValidParams(a, b, h, n);
+                Assert::IsTrue(true);
+            }
+            catch (const std::exception&)
+            {
+                Assert::Fail();
+            }
+        }
+        TEST_METHOD(check_WrongInput2) {
+            double a = -3;
+            double b = 10;
+            double h = -21;
+            int n = 4;
+
+            try
+            {
+                checkValidInput();
+                checkValidParams(a, b, h , n);
+                Assert::IsTrue(true);
+            }
+            catch (const std::exception&)
+            {
+                Assert::Fail();
+            }
+        }
+    };
+}
